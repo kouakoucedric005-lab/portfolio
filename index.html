@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<!--
+  Portfolio v4
+  • Contenu : content.js   • Styles : style.css   • Code : app.js
+  • Éditeur local : ajoutez #admin à l'adresse (ex. index.html#admin).
+    Il modifie un brouillon dans CE navigateur ; pour publier, exportez content.js
+    puis remplacez le fichier avant de déployer. Aucun secret ne se trouve dans ce code.
+-->
+<html lang="fr" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Politique de sécurité : aucun script/style inline, aucune connexion sortante.
+     Les en-têtes complets (frame-ancestors, HSTS…) sont dans le fichier _headers (Netlify). -->
+<meta http-equiv="Content-Security-Policy"
+  content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'; object-src 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="description" content="Kouakou Cédric — étudiant en cybersécurité et développeur Python. Projets, compétences et contact.">
+<meta name="theme-color" content="#08070f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kouakou Cédric — Portfolio">
+<meta property="og:description" content="Kouakou Cédric — étudiant en cybersécurité et développeur Python. Projets, compétences et contact.">
+<title>Kouakou Cédric — Portfolio</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%237c5cff'/%3E%3Cpath d='m13 11-5 5 5 5m6-10 5 5-5 5' fill='none' stroke='%23fff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+<script src="content.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Aller au contenu</a>
+
+<!-- ===== Icônes SVG (sprite) : remplacent tous les emoji ===== -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></symbol>
+  <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+  <symbol id="i-arrow-up-right" viewBox="0 0 24 24"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></symbol>
+  <symbol id="i-bug" viewBox="0 0 24 24"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></symbol>
+  <symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+  <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></symbol>
+  <symbol id="i-message" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></symbol>
+  <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+  <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></symbol>
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8"/><path d="M7 3v5h8"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><path d="M6 6h.01"/><path d="M6 18h.01"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M21 4h-7"/><path d="M10 4H3"/><path d="M21 12h-9"/><path d="M8 12H3"/><path d="M21 20h-5"/><path d="M12 20H3"/><path d="M14 2v4"/><path d="M8 10v4"/><path d="M16 18v4"/></symbol>
+  <symbol id="i-smartphone" viewBox="0 0 24 24"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></symbol>
+  <symbol id="i-terminal" viewBox="0 0 24 24"><path d="m4 17 6-6-6-6"/><path d="M12 19h8"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+</svg>
+
+<div class="progress" id="progress" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<canvas id="particles" aria-hidden="true"></canvas>
+<div class="bg-fx" aria-hidden="true">
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
+</div>
+
+<div id="page">
+
+<nav class="nav" id="nav" aria-label="Navigation principale">
+  <a class="logo" href="#top" aria-label="Retour en haut de page">Mon<span>Portfolio</span></a>
+  <button class="icon-btn nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Ouvrir le menu">
+    <svg class="icon"><use href="#i-menu"/></svg>
+  </button>
+  <ul class="nav-menu" id="navMenu">
+    <li><a href="#apropos">À propos</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#competences">Compétences</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><button class="icon-btn" id="themeBtn" type="button" aria-label="Passer au thème clair"><svg class="icon"><use href="#i-moon"/></svg></button></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+<header class="hero" id="top">
+  <div class="badge"><span class="dot" aria-hidden="true"></span><span id="badgeText"></span></div>
+  <h1>
+    <span class="line"><span class="line-in">Bonjour, je suis</span></span>
+    <span class="line"><span class="line-in grad" id="heroName">Votre Nom</span></span>
+  </h1>
+  <div class="typed" aria-hidden="true"><span id="typedText"></span><span class="caret"></span></div>
+  <p class="sr-only" id="wordsSr"></p>
+  <p class="desc" id="heroDesc" data-split="words"></p>
+  <div class="cta">
+    <a href="#projets" class="btn btn-primary" data-magnetic>Découvrir mes projets <svg class="icon"><use href="#i-arrow-right"/></svg></a>
+    <a href="#contact" class="btn btn-ghost" data-magnetic>Me contacter</a>
+  </div>
+  <a class="scroll-hint" href="#apropos">Défiler <svg class="icon"><use href="#i-chevron-down"/></svg></a>
+</header>
+
+<section id="apropos">
+  <h2 class="section-title" data-split="chars">À propos</h2>
+  <p class="sub" data-split="words">Faites connaissance avec moi.</p>
+  <div class="about">
+    <figure class="avatar-wrap reveal" data-reveal="zoom">
+      <div class="photo-frame">
+        <img class="photo" id="photo" width="720" height="960" decoding="async" alt="" hidden>
+        <div class="avatar" id="avatarFallback"><svg class="icon"><use href="#i-code"/></svg></div>
+      </div>
+      <span class="chip chip-1"><svg class="icon"><use href="#i-terminal"/></svg> Python</span>
+      <span class="chip chip-2"><svg class="icon"><use href="#i-shield"/></svg> Cybersécurité</span>
+    </figure>
+    <div class="about-text">
+      <p id="about1" data-split="words"></p>
+      <p id="about2" data-split="words"></p>
+      <div class="stats reveal" id="statsRow"></div>
+    </div>
+  </div>
+</section>
+
+<section id="projets">
+  <h2 class="section-title" data-split="chars">Mes projets</h2>
+  <p class="sub" data-split="words">Des outils et des sites que je construis pour apprendre, et pour protéger.</p>
+  <div class="projects" id="projectsGrid"></div>
+</section>
+
+<section id="competences">
+  <h2 class="section-title" data-split="chars">Compétences</h2>
+  <p class="sub" data-split="words">Ce que j'apprends, pratique et approfondis.</p>
+  <div class="skills stagger" id="skillsRow"></div>
+  <div class="bars reveal" id="barsRow"></div>
+</section>
+
+<section id="contact">
+  <div class="contact-box reveal" data-reveal="zoom">
+    <h2><svg class="icon"><use href="#i-message"/></svg> Un projet en tête ?</h2>
+    <p>Envoyez-moi un message, je réponds généralement sous 24 h.</p>
+    <!-- Netlify Forms détecte ce formulaire au déploiement (data-netlify). Les messages arrivent dans
+         l'onglet Forms du site et par email à l'adresse réglée dans Netlify : elle n'apparaît nulle part ici. -->
+    <form id="contactForm" name="contact" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+      <input type="hidden" name="form-name" value="contact">
+      <p class="hp" aria-hidden="true"><label>Ne pas remplir : <input type="text" name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <label class="sr-only" for="fName">Votre nom</label>
+      <input type="text" id="fName" name="name" placeholder="Votre nom" maxlength="80" required autocomplete="name">
+      <label class="sr-only" for="fEmail">Votre email</label>
+      <input type="email" id="fEmail" name="email" placeholder="Votre email" maxlength="120" required autocomplete="email">
+      <label class="sr-only" for="fMsg">Votre message</label>
+      <textarea id="fMsg" name="message" rows="4" placeholder="Votre message…" maxlength="2000" required></textarea>
+      <button type="submit" class="btn btn-primary btn-submit"><svg class="icon"><use href="#i-send"/></svg> Envoyer le message</button>
+      <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+    </form>
+    <div class="socials" id="socialsRow"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+    © <span id="year"></span> — Conçu et développé par Kouakou Cédric
+</footer>
+
+</div><!-- /#page -->
+
+<!-- Aperçu du brouillon local -->
+<div class="draft-pill" id="draftPill" role="status" hidden>
+  <svg class="icon"><use href="#i-alert"/></svg>
+  <span>Aperçu : brouillon local non publié</span>
+  <button type="button" id="draftDrop">Revenir à la version publiée</button>
+</div>
+
+<!-- ================= ÉDITEUR LOCAL ================= -->
+<div class="admin-overlay" id="adminOverlay" aria-hidden="true">
+  <div class="admin-box" role="dialog" aria-modal="true" aria-labelledby="adminTitle">
+    <button type="button" class="icon-btn admin-close" id="adminClose" aria-label="Fermer l'éditeur"><svg class="icon"><use href="#i-close"/></svg></button>
+
+    <div id="noCryptoView" hidden>
+      <h2 class="admin-title"><svg class="icon"><use href="#i-alert"/></svg> Éditeur indisponible</h2>
+      <p class="hint">L'éditeur utilise l'API de chiffrement du navigateur, disponible seulement en HTTPS ou sur localhost. Ouvrez le site via une adresse sécurisée.</p>
+    </div>
+
+    <!-- Première utilisation : création du mot de passe -->
+    <div id="setupView" hidden>
+      <h2 class="admin-title" id="adminTitle"><svg class="icon"><use href="#i-shield"/></svg> Créer le mot de passe</h2>
+      <p class="hint">Aucun mot de passe par défaut. Choisissez-en un d'au moins 10 caractères. Il est stocké haché (PBKDF2) dans ce navigateur uniquement ; il protège l'éditeur contre un usage involontaire, pas contre un visiteur qui contrôle son propre navigateur.</p>
+      <form id="setupForm" novalidate>
+        <label for="setupPass">Mot de passe</label>
+        <input type="password" id="setupPass" maxlength="100" autocomplete="new-password">
+        <label for="setupPass2">Confirmation</label>
+        <input type="password" id="setupPass2" maxlength="100" autocomplete="new-password">
+        <div class="login-err" id="setupErr" role="alert"></div>
+        <div class="admin-actions">
+          <button type="submit" class="btn btn-primary"><svg class="icon"><use href="#i-lock"/></svg> Créer et ouvrir</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Connexion -->
+    <div id="loginView" hidden>
+      <h2 class="admin-title"><svg class="icon"><use href="#i-lock"/></svg> Éditeur du portfolio</h2>
+      <p class="hint">Entrez votre mot de passe pour modifier le contenu.</p>
+      <form id="loginForm" novalidate>
+        <label for="adminPass">Mot de passe</label>
+        <input type="password" id="adminPass" maxlength="100" autocomplete="current-password">
+        <div class="login-err" id="loginErr" role="alert"></div>
+        <div class="admin-actions">
+          <button type="submit" class="btn btn-primary">Se connecter</button>
+          <button type="button" class="btn btn-ghost" id="loginCancel">Annuler</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Éditeur -->
+    <div id="editorView" hidden>
+      <h2 class="admin-title"><svg class="icon"><use href="#i-sliders"/></svg> Contenu du portfolio</h2>
+      <p class="hint">« Enregistrer » crée un brouillon visible seulement dans ce navigateur. Pour publier : « Exporter », remplacez <code>content.js</code> par le fichier obtenu, puis déployez.</p>
+      <label for="edName">Votre nom</label>
+      <input type="text" id="edName" maxlength="60">
+      <label for="edBadge">Badge d'accueil</label>
+      <input type="text" id="edBadge" maxlength="60">
+      <label for="edWords">Phrases défilantes (une par ligne)</label>
+      <textarea id="edWords"></textarea>
+      <label for="edDesc">Phrase d'accroche</label>
+      <textarea id="edDesc" class="ta-sm"></textarea>
+      <label for="edAbout1">À propos — paragraphe 1</label>
+      <textarea id="edAbout1" class="ta-sm"></textarea>
+      <label for="edAbout2">À propos — paragraphe 2</label>
+      <textarea id="edAbout2" class="ta-sm"></textarea>
+      <label for="edPhoto">Photo (fichier du site, ex. photo.webp ; vide = icône)</label>
+      <input type="text" id="edPhoto" maxlength="100">
+      <label for="edPhotoAlt">Description de la photo (accessibilité)</label>
+      <input type="text" id="edPhotoAlt" maxlength="140">
+      <label for="edStats">Chiffres clés (JSON : n, l)</label>
+      <textarea id="edStats"></textarea>
+      <label for="edProjects">Projets (JSON : icon, title, desc, tags, link)</label>
+      <textarea id="edProjects" class="ta-lg"></textarea>
+      <label for="edSkills">Compétences (une par ligne)</label>
+      <textarea id="edSkills"></textarea>
+      <label for="edBars">Barres de progression (JSON : label, pct)</label>
+      <textarea id="edBars"></textarea>
+      <label for="edEmail">Email de secours (facultatif — il serait visible dans le code du site ; laissez vide pour le garder privé)</label>
+      <input type="email" id="edEmail" maxlength="120">
+      <label for="edSocials">Réseaux sociaux (JSON : icon, url, title ; url en https)</label>
+      <textarea id="edSocials"></textarea>
+      <p class="hint hint-small">Icônes disponibles : <code id="iconList"></code></p>
+      <label for="edNewPass">Nouveau mot de passe (laisser vide pour ne pas changer)</label>
+      <input type="password" id="edNewPass" maxlength="100" autocomplete="new-password">
+      <div class="admin-actions">
+        <button type="button" class="btn btn-primary" id="saveBtn"><svg class="icon"><use href="#i-save"/></svg> Enregistrer</button>
+        <button type="button" class="btn btn-ghost" id="exportBtn"><svg class="icon"><use href="#i-download"/></svg> Exporter content.js</button>
+        <button type="button" class="btn-danger" id="resetBtn"><svg class="icon"><use href="#i-rotate"/></svg> Abandonner le brouillon</button>
+        <button type="button" class="btn btn-ghost" id="lockBtn"><svg class="icon"><use href="#i-lock"/></svg> Verrouiller</button>
+      </div>
+      <div class="admin-msg" id="adminMsg" role="status" aria-live="polite"></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
