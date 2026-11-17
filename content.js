@@ -53,7 +53,7 @@ window.PORTFOLIO_CONTENT = {
   // donc invisible ici). Si vous renseignez une adresse, elle sert de repli (mailto:) et devient publique.
   "email": "",
   "socials": [
-    { "icon": "github", "url": "https://github.com", "title": "GitHub" },
-    { "icon": "linkedin", "url": "https://linkedin.com", "title": "LinkedIn" }
+    { "icon": "github", "url": "https://github.com/kouakoucedric005-lab", "title": "GitHub" },
+    { "icon": "linkedin", "url": "https://www.linkedin.com/in/cedric-kouakou-37636444b", "title": "LinkedIn" }
   ]
 };
